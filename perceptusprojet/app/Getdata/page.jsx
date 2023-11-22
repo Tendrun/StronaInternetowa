@@ -1,13 +1,10 @@
-const { GetUsers } = require('Database/DB.js')
-
+import  { AddUser, GetUsers } from 'Database/DB.ts'
 
 export default async function Home(){
-
+    
     const users = await GetUsers(); 
 
-    console.log(users);
 
-    
     return (
         <main>
             <ul>
@@ -17,7 +14,15 @@ export default async function Home(){
                     </li>
                 ))}
             </ul>
+            <font color="color:red">
+                <form>       
+                    <input type="text" name="Pesel" defaultValue="Pesel" />
+                    <input type="text" name="Imie" defaultValue="Imie" />
+                    <input type="text" name="Nazwisko" defaultValue="Nazwisko" />
+                    <button type="submit" onClick={AddUser()}>Dodaj</button >
+                </form>                
+            </font>
         </main>
+        
     );
-    
 }
