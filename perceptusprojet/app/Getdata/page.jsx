@@ -1,4 +1,4 @@
-import  { AddUser, GetUsers } from 'Database/DB.ts'
+import { AddUser, GetUsers } from 'Database/DB.ts'
 
 export default async function Home(){
     
@@ -16,13 +16,14 @@ export default async function Home(){
             </ul>
             <font color="color:red">
                 <form>       
-                    <input type="text" name="Pesel" defaultValue="Pesel" />
+                    <input type="text" name="Pesel" defaultValue="Pesel" id="Pesel"/>
                     <input type="text" name="Imie" defaultValue="Imie" />
                     <input type="text" name="Nazwisko" defaultValue="Nazwisko" />
-                    <button type="submit" onClick={AddUser()}>Dodaj</button >
+                    <button type="submit" onClick={AddUser()}>Dodaj</button>
                 </form>                
             </font>
         </main>
         
     );
+    
 }
