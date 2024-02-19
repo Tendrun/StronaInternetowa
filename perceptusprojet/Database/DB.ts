@@ -22,22 +22,30 @@ export async function GetUsers(){
 
 const CreateUser = (
   Pesel: string,
+  Email: string,
   Imie: string,
   Nazwisko: string,
+  Haslo: string,
 ) => {
   return Prisma.validator<Prisma.tabletestCreateInput>()({
     Pesel,
+    Email,
     Imie,
     Nazwisko,
+    Haslo,
 })
 }
 
-export async function AddUser(Pesel_ : string, Imie_, Nazwisko_){
+export async function AddUser(Pesel_, Email_, Imie_, Nazwisko_, Haslo_){
   console.log("Pesel_ = " + Pesel_ + " Imie_ = " + Imie_ + " Nazwisko_ = " + Nazwisko_);
 
-  await prisma.tabletest.create({
+  const prisma = new PrismaClient()
+
+  console.log("Prisma = " + prisma);
+
+   await prisma.tabletest.create({
     data: CreateUser(
-      Pesel_, Imie_, Nazwisko_
+      Pesel_, Email_ ,Imie_, Nazwisko_, Haslo_
     )
 
   })
