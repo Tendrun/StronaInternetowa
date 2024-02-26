@@ -39,8 +39,6 @@ const CreateUser = (
 export async function AddUser(Pesel_, Email_, Imie_, Nazwisko_, Haslo_){
   console.log("Pesel_ = " + Pesel_ + " Imie_ = " + Imie_ + " Nazwisko_ = " + Nazwisko_);
 
-  const prisma = new PrismaClient()
-
   console.log("Prisma = " + prisma);
 
    await prisma.tabletest.create({

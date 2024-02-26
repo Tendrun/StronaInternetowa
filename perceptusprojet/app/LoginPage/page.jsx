@@ -1,7 +1,5 @@
-"use client"
-import { METHODS } from 'http';
-import React, { useState, useEffect } from 'react'; 
-
+'use client'
+import React, { useState, useEffect } from 'react';
 
 export default function Home(){
 
@@ -10,7 +8,8 @@ export default function Home(){
     const [password, setPassword] = useState(''); 
     const [errors, setErrors] = useState({}); 
     const [isFormValid, setIsFormValid] = useState(false); 
-  
+
+
     useEffect(() => { 
         validateForm(); 
     }, [name, email, password]); 
@@ -48,7 +47,7 @@ export default function Home(){
                 name, email, password
             }
               
-            const res = await fetch('http://localhost:3000/Getdata', {
+            const res = await fetch('http://localhost:3000/LoginPage', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(UserData)
@@ -57,7 +56,7 @@ export default function Home(){
 
             if(res.status === 201){
                 router.refresh()
-                router.push('/Getdata');
+                router.push('/LoginPage');
             }
 
         } else { 
