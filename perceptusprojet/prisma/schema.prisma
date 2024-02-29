@@ -15,3 +15,9 @@ model tabletest {
   Nazwisko String @db.Char(30)
   Haslo    String @db.Char(30)
 }
+
+model product {
+  Name  String @db.VarChar(100)
+  ID    Int    @id @default(autoincrement())
+  price Float  @db.Float
+}
