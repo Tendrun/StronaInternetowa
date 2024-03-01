@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "Database/DB.js", "Database/SubmitUser.js"  ],
+, "Database/DB.js", "Database/SubmitUser.js", ".vs/route.ts"  ],
   "exclude": [
     "node_modules"
   ]

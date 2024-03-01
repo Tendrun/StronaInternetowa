@@ -8,6 +8,9 @@ const CreateProductSchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
+
+    console.log("Post request send");
+
     const body = await request.json();
 
     const validation = CreateProductSchema.safeParse(body); 
@@ -15,8 +18,9 @@ export async function POST(request: NextRequest) {
     if(!validation.success)
         return NextResponse.json({ status: 400});
         
-    const newProduct = prisma.product.create({
-
+    const newProduct = await prisma.product.create({
+        data : { Name: body.Name, price: body.price}
     })
 
+    return NextResponse.json(newProduct, { status: 201 })
 }
