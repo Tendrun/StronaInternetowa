@@ -1,6 +1,5 @@
 import Product from "app/Components/ProductComponent/Product";
 
-//'/app/Components/ProductComponent/Product'
 export default function Home() {
     return (
       <main>

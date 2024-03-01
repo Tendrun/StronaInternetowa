@@ -12,6 +12,7 @@ const NavBar = () => {
         { label: "Home", href: "/" },
         { label: "Products", href: "/ProductsList" },
         { label: "Log in", href: "/LoginPage" },
+        { label: "Create new Product", href: "/ProductsList/ProductCreatePage"}
     ]
 
     return (
