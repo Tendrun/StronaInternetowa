@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@config "../../tailwind.config.js";
+
+@layer components {
+
+    .position-login{
+        @apply content-end py-32
+    }
+
+    .border-login {
+        @apply bg-slate-100  px-10 py-12 min-w-0 max-w-sm m-auto border-zinc-300 rounded-2xl shadow-2xl;
+    }
+
+    .h3-login{
+        @apply text-3xl font-medium text-center py-5;
+    }
+
+    .text-login {
+        @apply min-w-full p-12 border-solid font-light;
+    }
+
+    .button-login {
+        @apply bg-green-600 text-black font-bold text-base border-none p-3 rounded-lg cursor-pointer mt-3;
+    }
+
+    .error-login{
+        @apply text-red-500 text-base mt-1;
+    }
+
+    .marign-buttons-login {
+        @apply py-2;
+    }
+}

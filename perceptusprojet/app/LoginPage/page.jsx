@@ -1,5 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import '@radix-ui/themes/styles.css';
+import { TextField, Button, TextFieldRoot } from '@radix-ui/themes' 
 
 export default function Home(){
 
@@ -66,86 +68,54 @@ export default function Home(){
 
 
     return (
-        <div style={styles.container}> 
-            <div style={styles.form}> 
-                <h1 style={styles.heading}> 
-
-                </h1> 
-                <h3 style={styles.subHeading}>Login Page</h3> 
-                <input 
-                    style={styles.input} 
+        <div className='position-login'> 
+            <div className="border-login"> 
+                <div className='h3-login'>Login Page</div> 
+                <div className='marign-buttons-login'>
+                <TextField.Input 
+                    className="text-login"
                     placeholder="Name"
                     value={name} 
                     onChange={(e) => setName(e.target.value)} 
                 /> 
-                {errors.name && <p style={styles.error}>{errors.name}</p>} 
-                <input 
-                    style={styles.input} 
+                {errors.name && <p className='error-login'>{errors.name}</p>} 
+                </div>
+                <div className='marign-buttons-login'>
+                <TextField.Input 
+                    className="text-login"
                     placeholder="Email"
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
                 /> 
-                {errors.email && <p style={styles.error}>{errors.email}</p>} 
-                <input 
-                    style={styles.input} 
+                {errors.email && <p className='error-login'>{errors.email}</p>} 
+                </div>
+                <div className='marign-buttons-login'>
+                <TextField.Input
+                    className="text-login" 
                     placeholder="Password"
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                     type="password"
                 /> 
-                {errors.password && <p style={styles.error}>{errors.password}</p>} 
+                {errors.password && <p className='error-login'>{errors.password}</p>}
+                </div>
+                <div> 
                 <button 
-                    style={{ ...styles.button, opacity: isFormValid ? 1 : 0.5 }} 
+                    className='button-login'
+                    //style={{ ...styles.button, opacity: isFormValid ? 1 : 0.5 }} 
                     disabled={!isFormValid} 
                     onClick={onsubmit} 
                 > 
                     Submit 
                 </button> 
+                </div>
             </div> 
-        </div> 
+        </div>   
     ); 
 }
 
 const styles = { 
-    container: { 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        minHeight: '100vh', 
-        backgroundColor: '#f0f0f0', 
-    }, 
-    heading: { 
-        fontWeight: 'bold', 
-        fontSize: '25px', 
-        color: "green", 
-        textAlign: "center", 
-    }, 
-    subHeading: { 
-        color: 'black',
-        fontWeight: 'bold', 
-        fontSize: '25px', 
-        textAlign: "center", 
-  
-    }, 
-    form: { 
-        backgroundColor: '#fff', 
-        padding: '20px', 
-        borderRadius: '8px', 
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', 
-        width: '100%', 
-        maxWidth: '400px', 
-        margin: '0 auto', 
-    }, 
-    input: { 
-        width: '100%', 
-        padding: '12px', 
-        color: 'black', 
-        marginBottom: '12px', 
-        border: '1px solid #ccc', 
-        borderRadius: '10px', 
-        fontSize: '16px', 
-        transition: 'border-color 0.2s ease', 
-    }, 
+
     button: { 
         backgroundColor: 'green', 
         color: 'black', 
@@ -157,10 +127,5 @@ const styles = {
         cursor: 'pointer', 
         width: '40%', 
         transition: 'opacity 0.2s ease', 
-    }, 
-    error: { 
-        color: 'red', 
-        fontSize: '14px', 
-        marginBottom: '6px', 
     }, 
 }; 

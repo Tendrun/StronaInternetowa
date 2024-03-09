@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { z } from 'zod';
 import prisma from '../../../prisma/client';
-
-const CreateProductSchema = z.object({
-    Name: z.string().min(1).max(100),
-    price: z.number().min(1).max(100)
-});
+import { CreateProductSchema } from "./CreateProductSchema";
 
 export async function POST(request: NextRequest) {
 
