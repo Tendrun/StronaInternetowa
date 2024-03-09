@@ -8,12 +8,12 @@ datasource db {
 }
 
 model tabletest {
-  ID       Int    @id @default(autoincrement())
-  Pesel    String @db.Char(30)
-  Email    String @db.Char(30)
-  Imie     String @db.Char(30)
-  Nazwisko String @db.Char(30)
-  Haslo    String @db.Char(30)
+  ID          Int    @id @default(autoincrement())
+  Pesel       Int
+  Email       String @db.Char(50)
+  name        String @db.Char(30)
+  second_name String @db.Char(30)
+  password    String @db.Char(30)
 }
 
 model product {
