@@ -20,15 +20,26 @@ export default function Home() {
     const router = useRouter();
     const {register, handleSubmit} = useForm<LoginForm>();
 
+    const[error, setError] = useState('');
     
     
 
     return (
+
+        
         <form className='position-login' 
         onSubmit={handleSubmit(async (data) => {
-            await axios.post('/api/Login', data);
-            router.push('/LoginPage');
+
+            try {
+                await axios.post('/api/Login', data);
+                router.push('/LoginPage');
+                
+            } catch (error) {
+                setError('An unexpected error occurred');
+            }
         })}> 
+
+
             <div className="border-login"> 
                     <div className='h3-login'>Login Page</div> 
 
@@ -56,10 +67,9 @@ export default function Home() {
                     /> 
                     </div>
 
-                    <div className='marign-buttons-login'>
+                    <div className='marign-buttons-login appearance-none -web'>
                     <TextField.Input 
                         className="text-login"
-                        type="number"
                         inputMode="numeric"
                         placeholder='Pesel'
                         {...register('Pesel', {valueAsNumber: true })}
@@ -85,19 +95,3 @@ export default function Home() {
         </form>   
     ); 
 }
-
-const styles = { 
-
-    button: { 
-        backgroundColor: 'green', 
-        color: 'black', 
-        fontWeight: 'bold', 
-        fontSize: '16px', 
-        padding: '12px', 
-        border: 'none', 
-        borderRadius: '10px', 
-        cursor: 'pointer', 
-        width: '40%', 
-        transition: 'opacity 0.2s ease', 
-    }, 
-}; 
