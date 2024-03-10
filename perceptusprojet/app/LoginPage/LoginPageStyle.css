@@ -27,7 +27,7 @@
     }
 
     .error-login{
-        @apply text-red-500 text-base mt-1;
+        @apply text-red-500 text-sm mt-1;
     }
 
     .marign-buttons-login {
