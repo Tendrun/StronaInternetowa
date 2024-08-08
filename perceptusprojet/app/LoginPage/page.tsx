@@ -34,7 +34,7 @@ export default function Home() {
 
                 try {
                     SetSubmitting(true);
-                    await axios.post('/api/Login', data);
+                    await axios.post('/api/Register', data);
                     router.push('/');
                     
                 } catch (error) {
@@ -45,7 +45,7 @@ export default function Home() {
 
 
                 <div className="border-login"> 
-                        <div className='h3-login'>Login Page</div> 
+                        <div className='h3-login'>Create new account</div> 
 
                         <div className='marign-buttons-login'>
                         <TextField.Input 
